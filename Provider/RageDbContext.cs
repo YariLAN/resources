@@ -15,15 +15,17 @@ namespace Provider
 
         public DbSet<VehiclePrice> VehiclePrice { get; set; }
 
-        private string ConnectionString =>
-            new ConfigurationBuilder()
-            .AddJsonFile("appsettings.json")
-            .Build()
-            .GetConnectionString("DefaultConnection");
+        // private string ConnectionString =>
+        //     new ConfigurationBuilder()
+        //     .AddJsonFile("appsettings.json")
+        //     .Build()
+        //     .GetConnectionString("DefaultConnection");
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql(ConnectionString);
+            //optionsBuilder.UseNpgsql(ConnectionString);
+
+            optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=RageDb; User Id=admin;Password=Post");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
