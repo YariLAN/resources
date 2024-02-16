@@ -1,0 +1,4 @@
+﻿<meta>
+  <info name="My First Resource" author="You" type="script" />
+  <script src="compiled/Debug/netcoreapp3.1/NewResource.dll"/>
+</meta>

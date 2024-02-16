@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "NewResource": {
+      "commandName": "Project"
+    },
+    "RageServer": {
+      "commandName": "Executable",
+      "executablePath": "F:\\RAGEMP\\server-files\\ragemp-server.exe",
+      "workingDirectory": "F:\\RAGEMP\\server-files"
+    }
+  }
+}
