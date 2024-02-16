@@ -45,7 +45,7 @@ namespace Services
 
             foreach (var vehicle in vehicles)
             {
-                player.SendChatMessage($"{vehicle.Id} --> {(VehicleHash)vehicle.Model}");    
+                player.SendChatMessage($"{vehicle.Id} --> {(VehicleHash)vehicle.Model}");
             }
         }
 
@@ -257,14 +257,14 @@ namespace Services
             }
 
             var buyer = NAPI.Player.GetPlayerFromName(buyerName);
-            
+
             if (buyer is null)
             {
                 player.SendChatMessage($"Игрок с ником {buyerName} не найден");
                 return;
             }
 
-            if (buyer.Position.DistanceTo2D(player.Position) > 5) 
+            if (buyer.Position.DistanceTo2D(player.Position) > 5)
             {
                 player.SendChatMessage($"Игрок {buyerName} далеко от вас");
                 return;
@@ -293,6 +293,15 @@ namespace Services
                 return;
             }
 
+
+            var veh = (await _vehicleRepository.GetByIdAsync(vehicleId));
+
+            if (veh.OwnerID != player.GetData<int>("ID"))
+            {
+                player.SendChatMessage("Машина не ваша");
+                return;
+            }
+
             Vehicle targetVehicle = NAPI.Pools
                 .GetAllVehicles()
                 .FirstOrDefault(veh => veh.GetData<int>("ID") == vehicleId);
@@ -301,16 +310,8 @@ namespace Services
             {
                 VehicleModel vehModel = targetVehicle.GetData<VehicleModel>("VehicleModel");
 
-                if (vehModel.OwnerID != player.GetData<int>("ID"))
-                {
-                    player.SendChatMessage("Машина не ваша");
-                    return;
-                }
-
                 targetVehicle.Delete();
             }
-
-            var veh = (await _vehicleRepository.GetByIdAsync(vehicleId));
 
             var userModel = player.GetData<UserModel>("UserModel");
             userModel.Money += veh.Price;
