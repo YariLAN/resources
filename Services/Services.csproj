@@ -11,10 +11,10 @@
 
   <ItemGroup>
     <Reference Include="Bootstrapper">
-      <HintPath>..\..\runtime\Bootstrapper.dll</HintPath>
+      <HintPath>..\..\dotnet\runtime\Bootstrapper.dll</HintPath>
     </Reference>
     <Reference Include="rage-sharpN">
-      <HintPath>..\..\runtime\rage-sharpN.dll</HintPath>
+      <HintPath>..\..\dotnet\runtime\rage-sharpN.dll</HintPath>
     </Reference>
   </ItemGroup>
 

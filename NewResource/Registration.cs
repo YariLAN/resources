@@ -29,6 +29,21 @@ namespace NewResource
                 await new PlayerService().SpawnedVehiclesEvent(player);
             }
         }
+
+        [RemoteEvent("LoginFromClient")]
+        public async Task LoginfromClient(Player player, string username, string password)
+        {
+            var loginService = new LoginService();
+
+            var isLogin = await loginService.LoginAsync(player, username, password);
+
+            if (isLogin)
+            {
+                Main.LoggedInIDs.Add(player.GetData<int>("ID"));
+
+                await new PlayerService().SpawnedVehiclesEvent(player);
+            }
+        }
     }
 }
 

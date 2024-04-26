@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <Reference Include="Bootstrapper">
-      <HintPath>..\..\runtime\Bootstrapper.dll</HintPath>
+      <HintPath>..\..\dotnet\runtime\Bootstrapper.dll</HintPath>
     </Reference>
   </ItemGroup>
 

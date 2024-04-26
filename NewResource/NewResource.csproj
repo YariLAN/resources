@@ -4,18 +4,20 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <BaseOutputPath>F:\RageMP\server-files\dotnet\resources\NewResource\compiled</BaseOutputPath>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Commands\Services.csproj" />
+    <ProjectReference Include="..\DbModels\DbModels.csproj" />
+    <ProjectReference Include="..\Services\Services.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Reference Include="Bootstrapper">
-      <HintPath>..\..\runtime\Bootstrapper.dll</HintPath>
+      <HintPath>..\..\dotnet\runtime\Bootstrapper.dll</HintPath>
     </Reference>
     <Reference Include="rage-sharpN">
-      <HintPath>..\..\runtime\rage-sharpN.dll</HintPath>
+      <HintPath>..\..\dotnet\runtime\rage-sharpN.dll</HintPath>
     </Reference>
   </ItemGroup>
 
