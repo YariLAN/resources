@@ -40,7 +40,7 @@ namespace Services
 
             player.SetData("UserModel", userModel);
 
-            player.SendChatMessage("Отлично, ты успешно вошел!");
+            player.SendNotification("Отлично, ты успешно вошел!");
 
             return true;
         }

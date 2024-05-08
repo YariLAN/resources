@@ -1,6 +1,5 @@
 ﻿using DbModels;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using System.Reflection;
 
 namespace Provider
@@ -14,6 +13,10 @@ namespace Provider
         public DbSet<VehicleModel> VehicleModels { get; set; }
 
         public DbSet<VehiclePrice> VehiclePrice { get; set; }
+
+        public DbSet<Blips> Blips { get; set; }
+
+        public DbSet<TypesBlips> TypesBlips { get; set; }
 
         // private string ConnectionString =>
         //     new ConfigurationBuilder()

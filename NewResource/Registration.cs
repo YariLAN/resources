@@ -31,7 +31,7 @@ namespace NewResource
         }
 
         [RemoteEvent("LoginFromClient")]
-        public async Task LoginfromClient(Player player, string username, string password)
+        public async Task LoginFromClient(Player player, string username, string password)
         {
             var loginService = new LoginService();
 
@@ -43,6 +43,12 @@ namespace NewResource
 
                 await new PlayerService().SpawnedVehiclesEvent(player);
             }
+        }
+
+        [RemoteEvent("RegisterFromClient")]
+        private async Task RegisterFromClient(Player player, string username, string password)
+        {
+            await new RegistrationService().RegisterAsync(player, username, password);
         }
     }
 }

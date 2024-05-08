@@ -63,7 +63,13 @@ namespace Services
             player.SendChatMessage("Вам выданы права администратора)");
         }
 
-        public async Task GetVehicle(Player admin, string model, int colorOne = 0, int colorTwo = 0)
+        public async Task GetVehicle(
+            Player admin, 
+            string model, 
+            int colorOne = 0, 
+            int colorTwo = 0,
+            bool locked = false,
+            bool engine = false)
         {
             if (!admin.HasData("ID"))
             {
@@ -91,7 +97,8 @@ namespace Services
 
             var pos = NAPI.Entity.GetEntityPosition(admin);
 
-            var vehicle = NAPI.Vehicle.CreateVehicle(modelHash, pos, 0, colorOne, colorTwo, "ADMIN");
+            var vehicle = NAPI.Vehicle.CreateVehicle(
+                modelHash, pos, 0, colorOne, colorTwo, "ADMIN", locked: locked, engine: engine);
 
             admin.SetIntoVehicle(vehicle, (int)VehicleSeat.Driver);
         }

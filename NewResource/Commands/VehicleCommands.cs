@@ -1,7 +1,5 @@
-﻿using DbModels;
-using GTANetworkAPI;
+﻿using GTANetworkAPI;
 using Services;
-using System;
 using System.Threading.Tasks;
 
 namespace NewResource.Commands
@@ -60,6 +58,20 @@ namespace NewResource.Commands
         public async Task SellVehicle(Player player, int vehicleId)
         {
             await new VehiclesService().SellToCountry(player, vehicleId);   
+        }
+
+        [Command("nativeveh")]
+        public void OpenVehicleWindow(Player player)
+        {
+            NAPI.ClientEvent.TriggerClientEvent(player, "NativeVehicleMenu");
+        }
+
+        [RemoteEvent("VehicleSpawnFromClient")]
+        public async Task VehicleSpawnFromClient(Player player, bool locked, bool engine, string model) 
+        {
+            await new PlayerService().GetVehicle(player, model, 0, 0, locked, engine);
+
+            player.SendNotification($"You have created {model}!");
         }
     }
 }

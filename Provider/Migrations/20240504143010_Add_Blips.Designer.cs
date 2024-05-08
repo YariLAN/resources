@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Provider;
@@ -9,9 +10,10 @@ using Provider;
 namespace Provider.Migrations
 {
     [DbContext(typeof(RageDbContext))]
-    partial class RageDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240504143010_Add_Blips")]
+    partial class Add_Blips
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -131,7 +131,7 @@ namespace Services
 
             await _vehicleRepository.CreateAsync(vehModel);
 
-            player.SendChatMessage("Автомобиль успешно куплен!");
+            player.SendNotification($"Автомобиль {model} успешно куплен!");
         }
 
         public async Task SpawnAsync(Player player, string model)
@@ -207,7 +207,7 @@ namespace Services
 
             SpawnedVehicles.Remove(vehicleId);
 
-            player.SendChatMessage("Автомобиль удален");
+            player.SendNotification("Автомобиль удален");
         }
 
         public async Task ParkAsync(Player player)
@@ -228,6 +228,12 @@ namespace Services
 
             var vehModel = player.Vehicle.GetData<VehicleModel>("VehicleModel");
 
+            if (vehModel is null)
+            {
+                player.SendChatMessage("Вы не приобретали данную машину");
+                return;
+            }
+
             if (vehModel.OwnerID != id)
             {
                 player.SendChatMessage("Машина не ваша!");
@@ -245,7 +251,7 @@ namespace Services
 
             await _vehicleRepository.UpdateAsync(vehModel);
 
-            player.SendChatMessage("Автомобиль успешно припаркован!");
+            player.SendNotification("Автомобиль успешно припаркован!");
         }
 
         public async Task SellToPlayer(Player player, string buyerName, int vehicleId, double price)

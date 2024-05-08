@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mappers", "Mappers\Mappers.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{BAFE7F79-B6F8-46F5-B8C5-EB7C0199BC46}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client", "..\client_packages\cs_packages\Client\Client.csproj", "{1FB4111D-528F-4B5E-B8B2-E89E750816E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client", "..\client_packages\cs_packages\Client\Client.csproj", "{2BBB3CA0-3915-4A95-948E-1A79AF989A2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,10 +47,10 @@ Global
 		{BAFE7F79-B6F8-46F5-B8C5-EB7C0199BC46}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BAFE7F79-B6F8-46F5-B8C5-EB7C0199BC46}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BAFE7F79-B6F8-46F5-B8C5-EB7C0199BC46}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1FB4111D-528F-4B5E-B8B2-E89E750816E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1FB4111D-528F-4B5E-B8B2-E89E750816E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1FB4111D-528F-4B5E-B8B2-E89E750816E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1FB4111D-528F-4B5E-B8B2-E89E750816E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BBB3CA0-3915-4A95-948E-1A79AF989A2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BBB3CA0-3915-4A95-948E-1A79AF989A2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BBB3CA0-3915-4A95-948E-1A79AF989A2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BBB3CA0-3915-4A95-948E-1A79AF989A2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

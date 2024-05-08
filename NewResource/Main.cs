@@ -2,6 +2,7 @@
 using GTANetworkAPI;
 using Services;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
 namespace NewResource
@@ -15,9 +16,11 @@ namespace NewResource
         }
 
         [ServerEvent(Event.PlayerConnected)]
-        public void Event_OnPlayerConnect(Player player)
+        public async void Event_OnPlayerConnect(Player player)
         {
-            player.SendChatMessage("Welcome! Please register or logged in if was sign up");
+            NAPI.ClientEvent.TriggerClientEvent(player, "OnPlayerConnected", true);
+
+            await new MechanicService().GetVehicleServices(player);
         }
 
         [ServerEvent(Event.PlayerDisconnected)]
